@@ -1,84 +1,131 @@
 ﻿# ApexPlanet Data Analytics Internship
 
-**45-Day Data Analytics Internship Project** at ApexPlanet Software Pvt. Ltd.
+A 45-day Data Analytics Internship project focused on data cleaning, exploratory data analysis, SQL querying, database optimization, and Python database integration.
 
-This repository covers data cleaning, exploratory data analysis (EDA), SQL analysis, database optimization, and Python database integration.
+## Project Overview
 
-## Task 1 — Data Cleaning and EDA
+This repository documents my progress through the ApexPlanet Data Analytics internship. Each task includes relevant notebooks, Python scripts, SQL queries, reports, and visualizations.
 
-- Cleaned and inspected the Amazon Sale Report dataset.
-- Examined missing values, order statuses, quantities, categories, and recorded sales.
-- Created visualizations for categories, recorded sales amounts, and daily/monthly trends.
+## Technologies Used
 
-## Task 2 — SQL and Database Analysis
+* Python
+* Pandas and NumPy
+* Matplotlib and Seaborn
+* Jupyter Notebook
+* SQLite
+* SQLAlchemy
+* SQL
+* Git and GitHub
 
-- Imported 128,975 records into a local SQLite database.
-- Demonstrated SELECT, WHERE, ORDER BY, LIMIT, IN, and JOIN.
-- Analyzed monthly trends, product categories, order statuses, cancellations, and shipping states.
-- Used moving averages and cumulative sums.
-- Created SQL views and indexes.
-- Examined query plans using EXPLAIN QUERY PLAN.
+## Completed Tasks
 
-## Python Database Integration
+### Task 1 — Data Cleaning and Exploratory Data Analysis
 
-- SQLite3 connections and SQLAlchemy.
-- pandas SQL queries and DataFrames.
-- Parameterized queries and reusable database functions.
-- Integration tests for database access and parameter handling.
+**Objective:** Clean the Amazon Sale Report dataset and explore its key characteristics.
 
-The psycopg2-binary PostgreSQL driver is installed, but a live PostgreSQL connection has not been tested.
+Work completed:
 
-## Project Structure
+* Inspected the dataset and assessed missing values.
+* Cleaned and preprocessed data.
+* Examined order statuses, product categories, quantities, and recorded sales amounts.
+* Created visualizations of product categories and sales trends.
 
-- data/ — datasets and local database, excluded from Git.
-- notebooks/ — analysis notebooks.
-- scripts/ — database setup, SQL analysis, optimization, and tests.
-- sql/ — SQL query files.
-- reports/ — query results and data limitations.
-- visualizations/ — exploratory analysis charts.
+**Notebook:** [`01_data_cleaning_eda.ipynb`](notebooks/01_data_cleaning_eda.ipynb)
 
-## Setup
+**Visualizations:** See the [`visualizations`](visualizations/) folder.
 
-Install dependencies using:
+### Task 2 — SQL Analysis and Python Database Integration
 
-    pip install -r requirements.txt
+**Objective:** Import the cleaned data into SQLite and perform SQL-based analysis.
 
-The cleaned CSV must exist at data/Amazon_Sale_Report_Cleaned.csv before creating the database.
+Work completed:
 
-## Run the Analysis
+* Created and populated a SQLite database.
+* Executed basic and advanced SQL queries.
+* Analyzed monthly trends and product category performance.
+* Applied SQL views and indexes.
+* Examined query execution plans.
+* Connected Python to SQLite using `sqlite3` and SQLAlchemy.
+* Used pandas to retrieve query results.
+* Tested parameterized queries.
+* Documented dataset limitations.
 
-Run these commands from the repository root:
+**Notebook:** [`02_advanced_sql_python.ipynb`](notebooks/02_advanced_sql_python.ipynb)
 
-    python scripts/create_database.py
-    python scripts/verify_database.py
-    python scripts/run_sql_queries.py
-    python scripts/test_basic_sql.py
-    python scripts/run_advanced_queries.py
-    python scripts/apply_views_and_indexes.py
-    python scripts/analyze_query_plans.py
-    python scripts/test_database_integration.py
+**SQL scripts:** See the [`sql`](sql/) folder.
 
-Open the advanced notebook:
+**Reports:** See the [`reports`](reports/) folder.
 
-    jupyter notebook notebooks/02_advanced_sql_python.ipynb
+### Task Tracker
 
-## Data Limitations
+View [`docs/TASK_TRACKER.md`](docs/TASK_TRACKER.md) for the internship progress checklist.
 
-- The dataset has no customer_id, so customer retention and customer-level revenue rankings cannot be calculated reliably.
-- order_id identifies an order, not a customer.
-- Missing amounts are preserved rather than guessed.
-- Recorded sales totals may include cancelled or other non-completed orders unless statuses are filtered.
-- The dataset covers March through June 2022, with substantially fewer records in March.
+## Repository Structure
 
-See reports/data_limitations.md for further details.
+```text
+apexplanet-data-analytics/
+├── docs/
+│   └── TASK_TRACKER.md
+├── notebooks/
+│   ├── 01_data_cleaning_eda.ipynb
+│   └── 02_advanced_sql_python.ipynb
+├── scripts/
+├── sql/
+├── reports/
+├── visualizations/
+├── data/
+├── requirements.txt
+├── .gitignore
+└── README.md
+```
 
-## Technologies
+## Getting Started
 
-Python, pandas, NumPy, SQLite, SQL, SQLAlchemy, psycopg2-binary, Jupyter Notebook, Matplotlib, Seaborn, Plotly, Git, and GitHub.
+### 1. Clone the repository
 
-## Project Status
+```bash
+git clone https://github.com/4rn4b09/apexplanet-data-analytics.git
+cd apexplanet-data-analytics
+```
 
-- Task 1: Data cleaning and exploratory data analysis completed.
-- Task 2: SQL analysis, Python integration, and query-plan checks completed.
+### 2. Create a virtual environment
 
-This project is for educational and internship purposes.
+```bash
+python -m venv .venv
+```
+
+Activate it in PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+### 3. Install dependencies
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 4. Run the database scripts
+
+After placing the required dataset in the expected local `data/` location, run:
+
+```bash
+python scripts/create_database.py
+python scripts/verify_database.py
+python scripts/run_sql_queries.py
+```
+
+See the individual scripts and notebooks for further analysis instructions.
+
+## Data Notes
+
+The project uses the Amazon Sale Report dataset. Customer-level retention and revenue rankings cannot be calculated reliably because the available dataset does not contain a customer identifier.
+
+Dataset files and the local SQLite database are excluded from Git tracking. Obtain the dataset from its authorized source and place it in the required local path before running scripts that depend on it.
+
+## Author
+
+**Arnab Sarkar**
+
+Data Analytics Intern | Python | SQL | Exploratory Data Analysis
